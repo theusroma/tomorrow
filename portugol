@@ -1,0 +1,32 @@
+algoritmo media_alunos
+    // Definindo o tipo Aluno
+    tipo Aluno = registro
+        nota1: real
+        nota2: real
+        nome: caractere[31]
+    fim_registro
+    
+    // Declarando um vetor de alunos com 5 posições
+    var
+        aluno: vetor[0..4] de Aluno
+        media: real
+        i: inteiro
+    
+    // Solicitando dados e calculando a média para cada aluno
+    para i de 0 ate 4 faca
+        escreva("Informe o nome do aluno: ")
+        leia(aluno[i].nome)
+        escreva("Informe nota 1: ")
+        leia(aluno[i].nota1)
+        escreva("Informe nota 2: ")
+        leia(aluno[i].nota2)
+        
+        // Calculando a média do aluno
+        media <- (aluno[i].nota1 + aluno[i].nota2) / 2
+        
+        // Exibindo o nome e a média do aluno
+        escreva("\nNome: ", aluno[i].nome)
+        escreva("\nMédia: ", media:0:2)
+    fim_para
+    
+fim_algoritmo
