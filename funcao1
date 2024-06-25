@@ -1,0 +1,17 @@
+#include <stdio.h>
+/* Protótipo da função soma */
+int soma (int num1, int num2);
+/* Declara a função soma */
+int soma (int num1, int num2){
+int s;
+s = num1 + num2;
+return s;
+}
+int main(){
+int resultado;
+/* Chama a função soma */
+resultado = soma (3, 5);
+/* Mostra o resultado */
+printf ("Resultado: %d", resultado);
+return 0;
+}
