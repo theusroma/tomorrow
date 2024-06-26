@@ -1,0 +1,68 @@
+#include <stdio.h>
+typedef struct{
+ char nome [31];
+ int numeroC;
+ float saldoi;
+ }Conta;
+//prototipos
+void imprimeMenu();
+void listarClientes(Conta c[]);
+void realizaOperacao(int op, Conta clientes[]);
+void imprimeMenu(){
+ 
+ printf("\n\nMENU DE OPERACOES BANCARIAS\n");
+ printf("\nDigite um numero de 1 a 5 para escolher a opcao");
+ printf("\n[1] Listagem de clientes\n[2] Depósito\n[3] Saque\n[4] Fim");
+ printf("\n\nInfomer a operacao:");
+ 
+ 
+}
+void listarClientes(Conta c[]){
+ int i;
+ for (i = 0; i <6;i++){
+ printf("\n%d\t%s\t%.2f", i+1 ,c[i].nome,c[i].saldoi);
+}
+}
+void realizaOperacao(int op, Conta clientes[]){
+ switch(op){
+ case 1:
+ listarClientes(clientes);
+ break; 
+ case 2:
+ // depositar();
+ break;
+ case 3:
+ // sacar();
+ break;
+ case 4:
+ printf("\n\nVoce escolheu SAIR!\nO programa sera encerrado");
+ break;
+ default :
+ printf("\n\nOperacao invalida\n\nINforme uma operacao valida");
+ 
+ 
+}
+}
+int main (){
+ Conta clientes[6] = { "Joao Gabriel", 1234,0.0,
+ "Bruna Chapelin", 2810,0.0,
+ "Cesar Padua", 1409,0.0,
+ "Matheus Silva", 4208,0.0,
+ "Rebecca Beccari", 5607,0.0,
+ "Victor Furlaneto", 7006,0.0 };
+ 
+ int op; 
+ 
+ do{
+ 
+ imprimeMenu();
+ scanf(" %d", & op);
+ 
+ realizaOperacao(op, clientes);
+ 
+ 
+}while(op!=4);
+ 
+ 
+ return 0;
+}
